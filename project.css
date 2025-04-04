@@ -1,115 +1,111 @@
-/* Base Styles */
+
 body {
-    background-color: azure;
+    background-color: #f0f8ff; 
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
 }
 
-/* Project Grid Layout */
 .proj {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Always 2 columns per row */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
     justify-content: center;
     align-items: start;
-    margin: 0 15px;
+    margin: 0 20px;
     padding-top: 100px;
 }
 
-/* Individual Project Cards */
 .aboutcard {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(51, 51, 51, 0.4);
-    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff, #e6f7ff);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.15);
+    border-radius: 12px;
     flex: 1;
-    min-width: 280px;
-    height: auto;
+    min-width: 300px;
     text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .aboutcard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 123, 255, 0.25);
 }
 
-/* Icon Section */
+
 .aboutcard .icon {
-    margin: 0 auto 15px;
+    margin: 0 auto 16px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .aboutcard .icon video {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-/* Text Styles */
+
 .aboutcard h1 {
-    font-size: 1.6rem;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.7rem;
+    color: #0077b6;
+    margin-bottom: 12px;
 }
 
 .aboutcard p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.7;
 }
 
-/* Optional section heading */
+
 .about h1 {
-    font-size: 1.5rem;
-    color: #666;
+    font-size: 1.6rem;
+    color: #4a4a4a;
     line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Responsive Design */
-
-/* Tablets and below */
 @media (max-width: 1024px) {
     .proj {
         padding-top: 80px;
     }
 }
 
-/* Phones and small devices */
 @media (max-width: 768px) {
     .proj {
-        grid-template-columns: 1fr; /* 1 column layout for small screens */
-        margin: 0 10px;
+        grid-template-columns: 1fr; 
+        margin: 0 15px;
     }
 
     .aboutcard {
-        padding: 16px;
+        padding: 18px;
     }
 
     .aboutcard h1 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+    }
+
+    .aboutcard p {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .aboutcard {
+        padding: 14px;
+    }
+
+    .aboutcard h1 {
+        font-size: 1.3rem;
     }
 
     .aboutcard p {
         font-size: 0.95rem;
-    }
-}
-
-/* Very Small Devices */
-@media (max-width: 480px) {
-    .aboutcard {
-        padding: 12px;
-    }
-
-    .aboutcard h1 {
-        font-size: 1.2rem;
-    }
-
-    .aboutcard p {
-        font-size: 0.9rem;
     }
 }
