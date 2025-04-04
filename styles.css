@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+.header {
+  width: 100%;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 12px 25px;
+}
+
+.row img {
+  height: 70px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.row img:hover {
+  transform: scale(1.08);
+}
+
+.nav-toggler {
+  background-color: transparent;
+  border: none;
+  display: none;
+  height: 34px;
+  width: 34px;
+}
+
+.nav-toggler span {
+  background-color: #ffa500;
+  height: 2px;
+  width: 18px;
+  display: block;
+  margin: auto;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-toggler span::before,
+.nav-toggler span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffa500;
+  transition: 0.3s;
+}
+
+.nav-toggler span::before {
+  transform: translateY(-6px);
+}
+
+.nav-toggler span::after {
+  transform: translateY(6px);
+}
+
+.nav-toggler.active span::before {
+  transform: rotate(45deg);
+}
+
+.nav-toggler.active span::after {
+  transform: rotate(-45deg);
+}
+
+.nav-toggler.active span {
+  background-color: transparent;
+}
+
+.nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  color: #222;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav ul li a:hover,
+.nav ul li a.active {
+  background-color: #ffd700;
+  color: #000;
+}
+
+@media (max-width: 990px) {
+  .nav-toggler {
+    display: block;
+  }
+
+  .nav {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
+  }
+
+  .nav.open {
+    max-height: 300px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 12px 15px;
+    margin-top: 12px;
+  }
+
+  .nav ul li {
+    display: block;
+  }
+}
+
+/* Hero Section */
+.body {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+}
+
+.left {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.hello {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0056d2;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #ffa500;
+  position: relative;
+}
+
+.name::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+  color: #ffa500;
+}
+
+.role {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 10px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation: fadeInRight 1s ease-in-out;
+}
+
+.right img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Hero */
+@media (max-width: 1000px) {
+  .body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .right img {
+    height: 300px;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .role {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Social Icons Hover */
+.socialItem a.fa-brands:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+  color: #0056d2;
+}
+
+body {
+    background-color: #F5F5F5;
+    color: #333333;
+  }
+  
+  .row {
+    background: #0D1B2A;
+    color: white;
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: 0.3s;
+    color: white;
+  }
+  
+  .nav ul li a:hover,
+  .nav ul li a.active {
+    background-color: #FFD700;
+    color: #0D1B2A;
+    font-weight: 600;
+  }
+  
+  /* Button / Accent */
+  .name {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #FFD700;
+  }
+  
+  .name::after {
+    color: #FFD700;
+  }
+  
+  /* Social Icons Hover */
+  .socialItem a.fa-brands:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+    color: #FFD700;
+  }
+  
+  /* Optional: Role text */
+  .role {
+    font-size: 1.5rem;
+    color: #3E92CC;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0D1B2A;
+    color: white;
+    padding: 12px 25px;
+    flex-wrap: wrap;
+  }
+  
+  
